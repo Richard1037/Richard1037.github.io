@@ -39,10 +39,12 @@ const classes = ['button', variant === 'primary' && 'button--primary', !link.url
       )}
     </a>
   ) : (
-    <span
+    <button
+      type="button"
       class:list={classes}
-      tabindex="0"
-      aria-label={link.hint ? `${link.label}: ${link.hint}` : link.label}
+      data-copy={link.hint || undefined}
+      data-copy-label={`Copied ${link.label}`}
+      aria-label={link.hint ? `${link.label}: ${link.hint} (click to copy)` : link.label}
     >
       <Icon name={link.icon} />
       {link.label}
@@ -51,6 +53,6 @@ const classes = ['button', variant === 'primary' && 'button--primary', !link.url
           {link.hint}
         </span>
       )}
-    </span>
+    </button>
   )
 }

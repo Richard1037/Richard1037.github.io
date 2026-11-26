@@ -3,12 +3,16 @@ import { profile, contactLinks } from '../data/profile';
 import ContactLink from './ContactLink.astro';
 ---
 
-<section class="section container contact" id="contact" aria-labelledby="contact-heading">
-  <span class="eyebrow">Contact</span>
-  <h2 class="contact__title" id="contact-heading">Let's talk</h2>
-  <p class="contact__text">{profile.contactNote}</p>
+<section class="bento-tile bento-contact" id="contact" aria-labelledby="contact-heading">
+  <div class="bento-contact__copy">
+    <span class="bento-kicker">04 / Contact</span>
+    <h2 class="bento-title" id="contact-heading">Let's talk</h2>
+    <p class="bento-contact__text">{profile.contactNote}</p>
+  </div>
 
-  <div class="contact__links">
-    {contactLinks.map((link) => <ContactLink link={link} />)}
+  <div class="bento-contact__links">
+    {contactLinks.map((link, index) => (
+      <ContactLink link={link} variant={index === 0 ? 'primary' : 'default'} />
+    ))}
   </div>
 </section>

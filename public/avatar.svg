@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Richard Wang geometric monogram">
+  <defs>
+    <!-- Deep anodized slate squircle surface -->
+    <linearGradient id="bg-slate" x1="16%" y1="8%" x2="86%" y2="94%">
+      <stop offset="0%" stop-color="#2e3c52" />
+      <stop offset="48%" stop-color="#222d3e" />
+      <stop offset="100%" stop-color="#171f2c" />
+    </linearGradient>
+
+    <!-- Subtle ambient celadon aura behind right semicircle -->
+    <radialGradient id="glow-mint" cx="68%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#8dc5b8" stop-opacity="0.22" />
+      <stop offset="65%" stop-color="#8dc5b8" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#8dc5b8" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle warm ivory bounce light behind left semicircle -->
+    <radialGradient id="glow-ivory" cx="34%" cy="56%" r="44%">
+      <stop offset="0%" stop-color="#f5f1e4" stop-opacity="0.11" />
+      <stop offset="100%" stop-color="#f5f1e4" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Crisp top-edge glass bevel -->
+    <linearGradient id="rim-light" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22" />
+      <stop offset="35%" stop-color="#9ccbc0" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#0b1018" stop-opacity="0.32" />
+    </linearGradient>
+
+    <!-- Warm matte ivory ceramic gradient (left semicircle) -->
+    <linearGradient id="left-ivory" x1="18%" y1="12%" x2="88%" y2="92%">
+      <stop offset="0%" stop-color="#fdfbf5" />
+      <stop offset="58%" stop-color="#f3eee0" />
+      <stop offset="100%" stop-color="#e4dcc8" />
+    </linearGradient>
+
+    <!-- Soft celadon mint gradient (right semicircle) -->
+    <linearGradient id="right-mint" x1="15%" y1="8%" x2="88%" y2="92%">
+      <stop offset="0%" stop-color="#aae0d1" />
+      <stop offset="52%" stop-color="#89c3b5" />
+      <stop offset="100%" stop-color="#69a89a" />
+    </linearGradient>
+
+    <!-- Tactile elevation shadow for the two geometric halves -->
+    <filter id="piece-shadow" x="-18%" y="-14%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="7" stdDeviation="6.5" flood-color="#0a1019" flood-opacity="0.42" />
+    </filter>
+
+    <clipPath id="squircle-clip">
+      <rect x="0" y="0" width="256" height="256" rx="58" ry="58" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#squircle-clip)">
+    <!-- Base surface -->
+    <rect x="0" y="0" width="256" height="256" fill="url(#bg-slate)" />
+
+    <!-- Ambient studio glows -->
+    <rect x="0" y="0" width="256" height="256" fill="url(#glow-mint)" />
+    <rect x="0" y="0" width="256" height="256" fill="url(#glow-ivory)" />
+
+    <!-- Subtle top sheen arc -->
+    <ellipse cx="128" cy="-12" rx="140" ry="62" fill="#ffffff" opacity="0.045" />
+
+    <!-- Left warm ivory semicircle (shifted slightly downward, matching original silhouette) -->
+    <g filter="url(#piece-shadow)">
+      <path
+        d="M 122 51 A 77 77 0 0 0 122 205 Z"
+        fill="url(#left-ivory)"
+      />
+      <!-- Delicate inner highlight along left arc -->
+      <path
+        d="M 121 52.5 A 75.5 75.5 0 0 0 121 203.5"
+        fill="none"
+        stroke="#ffffff"
+        stroke-opacity="0.55"
+        stroke-width="1.5"
+      />
+    </g>
+
+    <!-- Right celadon mint semicircle (shifted slightly upward, crisp central channel) -->
+    <g filter="url(#piece-shadow)">
+      <path
+        d="M 136 42 A 70 70 0 0 1 136 182 Z"
+        fill="url(#right-mint)"
+      />
+      <!-- Delicate inner highlight along right arc -->
+      <path
+        d="M 137 43.5 A 68.5 68.5 0 0 1 137 180.5"
+        fill="none"
+        stroke="#d5f5ec"
+        stroke-opacity="0.5"
+        stroke-width="1.5"
+      />
+    </g>
+
+    <!-- Subtle inner squircle border for crispness on both light & dark themes -->
+    <rect
+      x="1.5"
+      y="1.5"
+      width="253"
+      height="253"
+      rx="56.5"
+      ry="56.5"
+      fill="none"
+      stroke="url(#rim-light)"
+      stroke-width="3"
+    />
+  </g>
+</svg>

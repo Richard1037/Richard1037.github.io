@@ -111,7 +111,7 @@ export const profile = {
    * 留空字符串则不显示头像。建议先把图片缩到 256×256 再放进来，
    * 否则一张大图会拖垮整个站点的加载体积。
    */
-  avatar: '/avatar.jpg',
+  avatar: '/avatar.svg',
 
   /** 你的"一句话价值主张"——全站最重要的一句。 */
   subheadline:
@@ -194,10 +194,6 @@ export const skills: SkillGroup[] = [
       'Computational geometry',
     ],
   },
-  {
-    label: 'Web (no frameworks)',
-    items: ['HTML', 'CSS', 'JavaScript'],
-  },
 ];
 
 /** 一项兴趣爱好。 */
@@ -233,14 +229,7 @@ export interface UseItem {
  * 工具清单。很常见的个人站栏目，成本极低但对同专业的人信息量很大，
  * 也特别容易成为别人搭话的由头。不用的东西就别列。
  */
-export const uses: UseItem[] = [
-  { label: 'Editor', value: 'VS Code', icon: 'vscode' },
-  {
-    label: 'Note-taking',
-    value: 'OneNote, handwritten on a Gaoman tablet',
-    icon: 'onenote',
-  },
-];
+export const uses: UseItem[] = [];
 
 /* ==========================================================================
    3. 最近在做什么（Now）
@@ -283,35 +272,6 @@ export const now = {
 
 export const projects: Project[] = [
   {
-    name: 'Idea Card Wall',
-    tagline: 'A conveyor-belt wall for keeping and revisiting half-formed ideas.',
-    description: `Note apps bury ideas in folders, so I built something that keeps them
-      moving instead: a horizontally auto-scrolling wall you can pause by hovering,
-      drag through, and search with highlighted matches. The deliberate constraint was
-      no backend — every card lives in localStorage, so the whole tool is a single HTML
-      file you can open by double-clicking. Search, multi-tag filtering and per-card
-      gradients are all plain JavaScript, with a WebGL scanline background that degrades
-      gracefully when WebGL is unavailable.`,
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'WebGL (OGL)', 'localStorage'],
-    links: [{ label: 'GitHub', url: 'https://github.com/Richard1037/Idea-Card-Wall' }],
-    year: '2026',
-    featured: true,
-  },
-  {
-    name: 'Personal Card',
-    tagline: 'A single-file profile card where the visual detail is the point.',
-    description: `I wanted a calling card that felt crafted rather than generated, so I
-      built one with no framework and no build step — one HTML file plus a CDN icon set.
-      It has day/night themes that remember your choice, a perspective grid that tilts
-      with the cursor, floating blurred light blobs, and one-click email copying. Most of
-      the effort went into the unglamorous parts: keeping the animation smooth, respecting
-      prefers-reduced-motion, and labelling every control for screen readers.`,
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'Iconify'],
-    links: [{ label: 'GitHub', url: 'https://github.com/Richard1037/personal-card' }],
-    year: '2026',
-    featured: true,
-  },
-  {
     name: 'This site',
     tagline: 'A static homepage that costs nothing to run and can change hosts in minutes.',
     description: `I wanted a homepage that would still work in five years, so I deliberately
@@ -339,8 +299,7 @@ export const experiences: Experience[] = [
     org: 'Gaoling School of Artificial Intelligence, Renmin University of China',
     // 开放区间：毕业年份还没确定，所以只写起点
     period: '2026 –',
-    description: `Coursework in mathematics, programming and the foundations of machine
-      learning, alongside self-directed work on web tools.`,
+    description: 'To be updated.',
     tags: ['Beijing'],
   },
   {
@@ -404,10 +363,8 @@ export const colophon = {
 
 export const sections: { id: string; label: string }[] = [
   { id: 'about', label: 'About' },
-  { id: 'now', label: 'Now' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'colophon', label: 'Colophon' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -430,7 +387,13 @@ export const contactLinks: Link[] = [
     hint: 'github.com/Richard1037',
     icon: 'github',
   },
-  // 首屏只显示前 3 个，所以 Blog 出现在底部的 Contact 区
+  // 首屏只显示前 3 个，所以 Gmail 和 Blog 出现在底部的 Contact 区
+  {
+    label: 'Gmail',
+    url: 'mailto:Richardwang1037@gmail.com',
+    hint: 'Richardwang1037@gmail.com',
+    icon: 'gmail',
+  },
   {
     label: 'Blog',
     url: 'https://www.cnblogs.com/Richardwhr',

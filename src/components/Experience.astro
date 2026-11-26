@@ -24,35 +24,28 @@ const kindIcons: Partial<Record<ExperienceKind, string>> = {
 // Rendered in the order given in src/data/profile.ts — sort it there.
 ---
 
-<section class="section container" id="experience" aria-labelledby="experience-heading">
-  <span class="eyebrow">Experience</span>
-  <h2 class="section__title" id="experience-heading">Where I've been</h2>
+<section class="bento-tile bento-exp" id="experience" aria-labelledby="experience-heading">
+  <span class="bento-kicker">03 / Experience</span>
+  <h2 class="bento-title" id="experience-heading">Where I've been</h2>
 
-  <div class="timeline">
+  <div class="bento-exp-grid">
     {
       experiences.map((item) => (
-        <article class="timeline__item" data-kind={item.kind}>
-          {/* 时间线轨道上的标记：有图标就用图标，没有就用圆点 */}
-          <span
-            class:list={['timeline__marker', kindIcons[item.kind] && 'timeline__marker--icon']}
-            aria-hidden="true"
-          >
-            <Icon name={kindIcons[item.kind]} />
-          </span>
-
-          <div class="timeline__header">
-            <h3 class="timeline__title">{item.title}</h3>
-            <span class="timeline__org">{item.org}</span>
+        <article class="exp-card" data-kind={item.kind}>
+          <div class="exp-card__meta">
+            <span class="exp-card__badge">
+              {kindIcons[item.kind] && <Icon name={kindIcons[item.kind]} />}
+              <span>{kindLabels[item.kind]}</span>
+            </span>
+            <span class="exp-card__period">{item.period}</span>
           </div>
 
-          <p class="timeline__period">
-            {item.period} · {kindLabels[item.kind]}
-          </p>
-
-          <p class="timeline__description">{item.description}</p>
+          <h3 class="exp-card__title">{item.title}</h3>
+          <p class="exp-card__org">{item.org}</p>
+          <p class="exp-card__description">{item.description}</p>
 
           {item.tags && item.tags.length > 0 && (
-            <ul class="timeline__tags">
+            <ul class="exp-card__tags">
               {item.tags.map((tag) => (
                 <li class="tag">{tag}</li>
               ))}
@@ -60,7 +53,7 @@ const kindIcons: Partial<Record<ExperienceKind, string>> = {
           )}
 
           {item.links && item.links.length > 0 && (
-            <div class="timeline__links">
+            <div class="exp-card__links">
               {item.links.map((link) => (
                 <a class="link-arrow" href={link.url} target="_blank" rel="noopener">
                   {link.label}

@@ -694,8 +694,8 @@ p {
      instead of the element's own box, so the arm pivots at the shoulder at any
      rendered size. */
   transform-box: view-box;
-  transform-origin: 26px 74px;
-  animation: mascot-wave 1.6s ease-in-out infinite;
+  transform-origin: 38px 80px;
+  animation: mascot-wave 1.5s ease-in-out infinite;
 }
 
 @keyframes mascot-bob {
@@ -770,7 +770,7 @@ p {
 .hero__avatar {
   width: 7rem;
   height: 7rem;
-  border-radius: 50%;
+  border-radius: 1.5rem;
   border: 1px solid var(--border);
   background-color: var(--surface);
   object-fit: cover;

@@ -1,12 +1,9 @@
 ---
 /**
- * 奶龙。
+ * 招手奶龙（内联 SVG，零外部请求）。
  *
- * 手写的内联 SVG：零外部请求、可随主题缩放、只有两条 CSS 动画。
- *
- * 造型比例是从参考图上量出来的，不是目测。三个关键特征：白色眼白 +
- * 深色瞳孔的大眼睛、宽嘴笑、一只手举起打招呼。手臂用较粗的圆头描边画成，
- * 圆头本身就是手掌——比另贴一个圆球自然。
+ * 暖黄渐变身体 + 奶白圆肚皮 + 腮红 + 大眼睛双高光 + 小尾巴 + 抬手挥动，
+ * 带柔和深棕描边，在浅色与深色主题下都清晰可爱。
  *
  * 想换掉它：删掉 Hero.astro 里的 <Mascot /> 一行即可。
  */
@@ -14,51 +11,178 @@
 
 <svg
   class="mascot"
-  viewBox="0 0 120 148"
+  viewBox="0 0 140 156"
   aria-hidden="true"
   focusable="false"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <!-- 腿 -->
-  <ellipse cx="44" cy="131" rx="12" ry="13" fill="#efdf98"></ellipse>
-  <ellipse cx="76" cy="131" rx="12" ry="13" fill="#efdf98"></ellipse>
+  <defs>
+    <radialGradient id="nailong-body" cx="42%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FFE87C" />
+      <stop offset="68%" stop-color="#F9CF48" />
+      <stop offset="100%" stop-color="#EEB82E" />
+    </radialGradient>
+    <radialGradient id="nailong-belly" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFDF2" />
+      <stop offset="100%" stop-color="#FBF0C4" />
+    </radialGradient>
+    <linearGradient id="nailong-shade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7CA42" />
+      <stop offset="100%" stop-color="#E5AD24" />
+    </linearGradient>
+  </defs>
 
-  <!-- 右手：垂在体侧 -->
+  <!-- 地面柔影 -->
+  <ellipse cx="70" cy="146" rx="36" ry="6" fill="currentColor" opacity="0.12" />
+
+  <!-- 小尾巴（右侧探出） -->
   <path
-    d="M100 86C108 96 106 110 101 116"
-    fill="none"
-    stroke="#efdf98"
-    stroke-width="16"
-    stroke-linecap="round"></path>
+    d="M103 108 C120 105 129 94 126 84 C124 78 117 81 114 87 C110 94 104 97 99 98 Z"
+    fill="url(#nailong-shade)"
+    stroke="#6E491E"
+    stroke-width="2.6"
+    stroke-linejoin="round"
+  />
 
-  <!-- 左手：举起挥手（靠 CSS 绕肩膀摆动） -->
+  <!-- 小短腿 -->
+  <ellipse
+    cx="52"
+    cy="135"
+    rx="13"
+    ry="11"
+    fill="url(#nailong-shade)"
+    stroke="#6E491E"
+    stroke-width="2.6"
+  />
+  <ellipse
+    cx="88"
+    cy="135"
+    rx="13"
+    ry="11"
+    fill="url(#nailong-shade)"
+    stroke="#6E491E"
+    stroke-width="2.6"
+  />
+  <!-- 脚趾小纹路 -->
+  <path
+    d="M46 139 Q48 135 50 139 M53 140 Q55 136 57 140 M83 140 Q85 136 87 140 M90 139 Q92 135 94 139"
+    fill="none"
+    stroke="#6E491E"
+    stroke-width="1.8"
+    stroke-linecap="round"
+  />
+
+  <!-- 举起挥手的左手（绕肩膀摆动） -->
   <g class="mascot__arm">
     <path
-      d="M25 74C13 72 9 58 14 47"
+      d="M36 86 C21 82 12 67 16 53 C19 44 30 43 34 52 C37 59 38 69 44 74 Z"
+      fill="url(#nailong-body)"
+      stroke="#6E491E"
+      stroke-width="2.6"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+    <!-- 挥手动态小弧线 -->
+    <path
+      d="M8 46 Q4 53 7 61"
       fill="none"
-      stroke="#efdf98"
-      stroke-width="16"
-      stroke-linecap="round"></path>
+      stroke="#F5B82E"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      opacity="0.85"
+    />
+    <path
+      d="M14 39 Q10 43 11 48"
+      fill="none"
+      stroke="#F5B82E"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.65"
+    />
   </g>
 
-  <!-- 身体 -->
+  <!-- 胖乎乎的身体与圆头（一体梨形轮廓） -->
   <path
-    d="M60 2C73 2 84 14 86 34C88 54 105 58 107 78C109 96 101 116 91 125C85 131 73 134 60 134C47 134 35 131 29 125C19 116 11 96 13 78C15 58 32 54 34 34C36 14 47 2 60 2Z"
-    fill="#efdf98"></path>
+    d="M70 12
+       C90 12 103 26 104 47
+       C105 63 114 75 114 96
+       C114 119 98 135 70 135
+       C42 135 26 119 26 96
+       C26 75 35 63 36 47
+       C37 26 50 12 70 12 Z"
+    fill="url(#nailong-body)"
+    stroke="#6E491E"
+    stroke-width="2.8"
+    stroke-linejoin="round"
+  />
 
-  <!-- 眼睛：白色眼白 + 深色瞳孔 + 高光 -->
-  <ellipse cx="45" cy="30" rx="11" ry="12" fill="#fdfcf6"></ellipse>
-  <ellipse cx="75" cy="30" rx="11" ry="12" fill="#fdfcf6"></ellipse>
-  <ellipse cx="46.5" cy="30.5" rx="5.5" ry="6" fill="#3a332a"></ellipse>
-  <ellipse cx="73.5" cy="30.5" rx="5.5" ry="6" fill="#3a332a"></ellipse>
-  <circle cx="48" cy="28.2" r="1.6" fill="#fdfcf6"></circle>
-  <circle cx="75.5" cy="28.2" r="1.6" fill="#fdfcf6"></circle>
+  <!-- 头顶小高光 -->
+  <ellipse cx="62" cy="22" rx="11" ry="4.2" fill="#FFF7C7" opacity="0.7" transform="rotate(-12 62 22)" />
 
-  <!-- 嘴：宽笑 -->
+  <!-- 奶白色圆肚皮 -->
+  <ellipse cx="70" cy="102" rx="28" ry="25" fill="url(#nailong-belly)" />
+  <!-- 肚皮柔和弧纹 -->
   <path
-    d="M46 46C52 56 68 56 74 46"
+    d="M52 108 Q70 116 88 108"
     fill="none"
-    stroke="#4a3e2c"
+    stroke="#E9D38E"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    opacity="0.75"
+  />
+
+  <!-- 右手：自然贴在圆肚皮旁 -->
+  <path
+    d="M104 82 C115 89 116 105 107 111 C100 116 93 109 94 100"
+    fill="url(#nailong-body)"
+    stroke="#6E491E"
     stroke-width="2.6"
-    stroke-linecap="round"></path>
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- 腮红 -->
+  <ellipse cx="42" cy="57" rx="7.2" ry="4.2" fill="#FF8E8E" opacity="0.52" />
+  <ellipse cx="98" cy="57" rx="7.2" ry="4.2" fill="#FF8E8E" opacity="0.52" />
+
+  <!-- 大眼睛（白眼白 + 深褐瞳孔 + 双高光） -->
+  <ellipse cx="53" cy="44" rx="10.5" ry="11.5" fill="#FFFFFF" stroke="#6E491E" stroke-width="2.1" />
+  <ellipse cx="87" cy="44" rx="10.5" ry="11.5" fill="#FFFFFF" stroke="#6E491E" stroke-width="2.1" />
+  <ellipse cx="54.5" cy="45" rx="6" ry="6.8" fill="#3B2918" />
+  <ellipse cx="85.5" cy="45" rx="6" ry="6.8" fill="#3B2918" />
+  <!-- 主高光 -->
+  <circle cx="56.8" cy="42" r="2.3" fill="#FFFFFF" />
+  <circle cx="87.8" cy="42" r="2.3" fill="#FFFFFF" />
+  <!-- 次高光 -->
+  <circle cx="52.5" cy="47.8" r="1.1" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="83.5" cy="47.8" r="1.1" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- 小眉毛 -->
+  <path
+    d="M46 30 Q52 27 57 30"
+    fill="none"
+    stroke="#6E491E"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M83 30 Q88 27 94 30"
+    fill="none"
+    stroke="#6E491E"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- 开心张嘴笑 + 小粉舌 -->
+  <path
+    d="M57 58 Q70 72 83 58 Q70 61 57 58 Z"
+    fill="#D95E5E"
+    stroke="#6E491E"
+    stroke-width="2.2"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M63 63.5 Q70 68.5 77 63.5 Q70 61.8 63 63.5 Z"
+    fill="#FF9898"
+  />
 </svg>
