@@ -317,10 +317,10 @@ export const projects: Project[] = [
     description: `I wanted a homepage that would still work in five years, so I deliberately
       avoided everything that rots: no client-side JavaScript, no CSS framework, no external
       fonts. Content lives in one data file, fully separate from layout. Astro renders it to
-      plain HTML at build time and Cloudflare Workers serves it, with every push to main
-      deploying automatically. The entire built site is under 20 KB.`,
-    tech: ['Astro', 'TypeScript', 'CSS', 'Cloudflare Workers'],
-    links: [{ label: 'GitHub', url: 'https://github.com/Richard1037/personal-site' }],
+      plain HTML at build time and GitHub Pages serves it, with every push to main
+      deploying automatically via GitHub Actions. The entire built site is under 20 KB.`,
+    tech: ['Astro', 'TypeScript', 'CSS', 'GitHub Pages'],
+    links: [{ label: 'GitHub', url: 'https://github.com/Richard1037/Richard1037.github.io' }],
     year: '2026',
   },
 ];
@@ -390,7 +390,7 @@ export const colophon = {
   links: [
     {
       label: 'Source on GitHub',
-      url: 'https://github.com/Richard1037/personal-site',
+      url: 'https://github.com/Richard1037/Richard1037.github.io',
     },
   ],
 };
