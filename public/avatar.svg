@@ -1,110 +1,169 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Richard Wang geometric monogram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Richard Wang geometric monogram">
   <defs>
     <!-- Deep anodized slate squircle surface -->
-    <linearGradient id="bg-slate" x1="16%" y1="8%" x2="86%" y2="94%">
-      <stop offset="0%" stop-color="#2e3c52" />
-      <stop offset="48%" stop-color="#222d3e" />
-      <stop offset="100%" stop-color="#171f2c" />
+    <linearGradient id="bg-slate" x1="14%" y1="6%" x2="88%" y2="94%">
+      <stop offset="0%" stop-color="#2e3e54" />
+      <stop offset="46%" stop-color="#1f2a3b" />
+      <stop offset="100%" stop-color="#121924" />
     </linearGradient>
 
-    <!-- Subtle ambient celadon aura behind right semicircle -->
-    <radialGradient id="glow-mint" cx="68%" cy="42%" r="48%">
-      <stop offset="0%" stop-color="#8dc5b8" stop-opacity="0.22" />
-      <stop offset="65%" stop-color="#8dc5b8" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#8dc5b8" stop-opacity="0" />
+    <!-- Studio rim illumination on top-left -->
+    <radialGradient id="top-sheen" cx="26%" cy="8%" r="72%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10" />
+      <stop offset="50%" stop-color="#96cfc1" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Subtle warm ivory bounce light behind left semicircle -->
-    <radialGradient id="glow-ivory" cx="34%" cy="56%" r="44%">
-      <stop offset="0%" stop-color="#f5f1e4" stop-opacity="0.11" />
-      <stop offset="100%" stop-color="#f5f1e4" stop-opacity="0" />
+    <!-- Luminous celadon-mint ambient aura behind right semicircle -->
+    <radialGradient id="glow-mint" cx="68%" cy="44%" r="44%">
+      <stop offset="0%" stop-color="#8fd4c3" stop-opacity="0.30" />
+      <stop offset="52%" stop-color="#6db7a6" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#6db7a6" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Crisp top-edge glass bevel -->
-    <linearGradient id="rim-light" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22" />
-      <stop offset="35%" stop-color="#9ccbc0" stop-opacity="0.06" />
-      <stop offset="100%" stop-color="#0b1018" stop-opacity="0.32" />
+    <!-- Warm porcelain bounce light behind left semicircle -->
+    <radialGradient id="glow-ivory" cx="32%" cy="56%" r="42%">
+      <stop offset="0%" stop-color="#fff8e8" stop-opacity="0.14" />
+      <stop offset="60%" stop-color="#f4eedc" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#f4eedc" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Precision center seam hairline gradient -->
+    <linearGradient id="seam-line" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8fd4c3" stop-opacity="0" />
+      <stop offset="30%" stop-color="#8fd4c3" stop-opacity="0.32" />
+      <stop offset="70%" stop-color="#f7f2e4" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#f7f2e4" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Warm matte ivory ceramic gradient (left semicircle) -->
-    <linearGradient id="left-ivory" x1="18%" y1="12%" x2="88%" y2="92%">
-      <stop offset="0%" stop-color="#fdfbf5" />
-      <stop offset="58%" stop-color="#f3eee0" />
-      <stop offset="100%" stop-color="#e4dcc8" />
+    <!-- Crisp squircle glass bevel -->
+    <linearGradient id="rim-light" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.30" />
+      <stop offset="32%" stop-color="#a8dfd1" stop-opacity="0.12" />
+      <stop offset="70%" stop-color="#1c2738" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#090e16" stop-opacity="0.45" />
     </linearGradient>
 
-    <!-- Soft celadon mint gradient (right semicircle) -->
-    <linearGradient id="right-mint" x1="15%" y1="8%" x2="88%" y2="92%">
-      <stop offset="0%" stop-color="#aae0d1" />
-      <stop offset="52%" stop-color="#89c3b5" />
-      <stop offset="100%" stop-color="#69a89a" />
+    <!-- Left half: sculpted warm porcelain ceramic -->
+    <linearGradient id="left-ivory" x1="14%" y1="8%" x2="88%" y2="94%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="42%" stop-color="#f7f3e8" />
+      <stop offset="82%" stop-color="#ebe3d1" />
+      <stop offset="100%" stop-color="#ddd3bd" />
     </linearGradient>
 
-    <!-- Tactile elevation shadow for the two geometric halves -->
-    <filter id="piece-shadow" x="-18%" y="-14%" width="136%" height="136%">
-      <feDropShadow dx="0" dy="7" stdDeviation="6.5" flood-color="#0a1019" flood-opacity="0.42" />
+    <!-- Left half soft top specular wash -->
+    <radialGradient id="left-spec" cx="24%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.72" />
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Right half: luminous celadon jade glass-ceramic -->
+    <linearGradient id="right-mint" x1="10%" y1="6%" x2="90%" y2="94%">
+      <stop offset="0%" stop-color="#c2f0e3" />
+      <stop offset="38%" stop-color="#92cfc0" />
+      <stop offset="78%" stop-color="#70b3a4" />
+      <stop offset="100%" stop-color="#569688" />
+    </linearGradient>
+
+    <!-- Right half soft inner glass sheen -->
+    <radialGradient id="right-spec" cx="32%" cy="18%" r="68%">
+      <stop offset="0%" stop-color="#ecfffa" stop-opacity="0.58" />
+      <stop offset="52%" stop-color="#b4e8da" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#569688" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Deep tactile shadow for left porcelain piece -->
+    <filter id="shadow-ivory" x="-22%" y="-18%" width="144%" height="148%">
+      <feDropShadow dx="-2" dy="14" stdDeviation="14" flood-color="#070c14" flood-opacity="0.52" />
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#070c14" flood-opacity="0.28" />
+    </filter>
+
+    <!-- Tactile + subtle mint backlit shadow for right celadon piece -->
+    <filter id="shadow-mint" x="-24%" y="-20%" width="148%" height="152%">
+      <feDropShadow dx="2" dy="14" stdDeviation="14" flood-color="#070c14" flood-opacity="0.48" />
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#6cc2ae" flood-opacity="0.22" />
     </filter>
 
     <clipPath id="squircle-clip">
-      <rect x="0" y="0" width="256" height="256" rx="58" ry="58" />
+      <rect x="0" y="0" width="512" height="512" rx="116" ry="116" />
+    </clipPath>
+
+    <clipPath id="left-clip">
+      <path d="M 244 134 L 244 410 Q 244 420 234 419.66 A 148 148 0 0 1 234 124.34 Q 244 124 244 134 Z" />
+    </clipPath>
+
+    <clipPath id="right-clip">
+      <path d="M 270 112 Q 270 102 280 102.37 A 136 136 0 0 1 280 373.63 Q 270 374 270 364 Z" />
     </clipPath>
   </defs>
 
   <g clip-path="url(#squircle-clip)">
-    <!-- Base surface -->
-    <rect x="0" y="0" width="256" height="256" fill="url(#bg-slate)" />
+    <!-- Base anodized slate surface -->
+    <rect x="0" y="0" width="512" height="512" fill="url(#bg-slate)" />
+    <rect x="0" y="0" width="512" height="512" fill="url(#top-sheen)" />
 
-    <!-- Ambient studio glows -->
-    <rect x="0" y="0" width="256" height="256" fill="url(#glow-mint)" />
-    <rect x="0" y="0" width="256" height="256" fill="url(#glow-ivory)" />
+    <!-- Subtle Swiss geometric construction rings -->
+    <g fill="none" stroke="#ffffff">
+      <circle cx="256" cy="256" r="204" stroke-opacity="0.045" stroke-width="1.25" />
+      <circle cx="256" cy="256" r="168" stroke-opacity="0.035" stroke-width="1" stroke-dasharray="4 8" />
+    </g>
 
-    <!-- Subtle top sheen arc -->
-    <ellipse cx="128" cy="-12" rx="140" ry="62" fill="#ffffff" opacity="0.045" />
+    <!-- Studio ambient glows -->
+    <rect x="0" y="0" width="512" height="512" fill="url(#glow-mint)" />
+    <rect x="0" y="0" width="512" height="512" fill="url(#glow-ivory)" />
 
-    <!-- Left warm ivory semicircle (shifted slightly downward, matching original silhouette) -->
-    <g filter="url(#piece-shadow)">
+    <!-- Delicate architectural hairline along the central vertical channel -->
+    <line x1="257" y1="64" x2="257" y2="448" stroke="url(#seam-line)" stroke-width="1.5" />
+
+    <!-- Left warm porcelain semicircle (micro-rounded inner corners, shifted slightly downward) -->
+    <g filter="url(#shadow-ivory)">
       <path
-        d="M 122 51 A 77 77 0 0 0 122 205 Z"
+        d="M 244 134 L 244 410 Q 244 420 234 419.66 A 148 148 0 0 1 234 124.34 Q 244 124 244 134 Z"
         fill="url(#left-ivory)"
       />
-      <!-- Delicate inner highlight along left arc -->
+      <!-- Soft porcelain specular highlight -->
+      <rect x="90" y="118" width="160" height="308" fill="url(#left-spec)" clip-path="url(#left-clip)" />
+      <!-- Crisp inner bevel stroke -->
       <path
-        d="M 121 52.5 A 75.5 75.5 0 0 0 121 203.5"
+        d="M 242.5 135 L 242.5 409 Q 242.5 418 234 417.7 A 146 146 0 0 1 234 126.3 Q 242.5 126 242.5 135 Z"
         fill="none"
         stroke="#ffffff"
-        stroke-opacity="0.55"
-        stroke-width="1.5"
+        stroke-opacity="0.65"
+        stroke-width="2.2"
       />
     </g>
 
-    <!-- Right celadon mint semicircle (shifted slightly upward, crisp central channel) -->
-    <g filter="url(#piece-shadow)">
+    <!-- Right celadon-mint semicircle (micro-rounded inner corners, shifted slightly upward) -->
+    <g filter="url(#shadow-mint)">
       <path
-        d="M 136 42 A 70 70 0 0 1 136 182 Z"
+        d="M 270 112 Q 270 102 280 102.37 A 136 136 0 0 1 280 373.63 Q 270 374 270 364 Z"
         fill="url(#right-mint)"
       />
-      <!-- Delicate inner highlight along right arc -->
+      <!-- Soft jade glass sheen -->
+      <rect x="266" y="96" width="154" height="284" fill="url(#right-spec)" clip-path="url(#right-clip)" />
+      <!-- Crisp inner bevel stroke -->
       <path
-        d="M 137 43.5 A 68.5 68.5 0 0 1 137 180.5"
+        d="M 271.5 113 Q 271.5 104 280 104.3 A 134 134 0 0 1 280 371.7 Q 271.5 372 271.5 363 Z"
         fill="none"
-        stroke="#d5f5ec"
-        stroke-opacity="0.5"
-        stroke-width="1.5"
+        stroke="#e4fff8"
+        stroke-opacity="0.58"
+        stroke-width="2.2"
       />
     </g>
 
-    <!-- Subtle inner squircle border for crispness on both light & dark themes -->
+    <!-- Crisp outer squircle glass bevel -->
     <rect
-      x="1.5"
-      y="1.5"
-      width="253"
-      height="253"
-      rx="56.5"
-      ry="56.5"
+      x="2.5"
+      y="2.5"
+      width="507"
+      height="507"
+      rx="113.5"
+      ry="113.5"
       fill="none"
       stroke="url(#rim-light)"
-      stroke-width="3"
+      stroke-width="5"
     />
   </g>
 </svg>
